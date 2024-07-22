@@ -15,10 +15,10 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  min-inline-size: 375px;
+  min-block-size: 1521px;
   font-family: var(--main-font), 'sans-serif';
-  font-variation-settings: 'wght' var(--main-font-weight);
+  font-variation-settings: 'wght' var(--main-font-weight), 400;
   background-color: var(--bg-color);
   color: var(--accent-color);
   background-image: var(--background-pattern);
@@ -26,11 +26,11 @@
   background-repeat: repeat repeat;
   background-size: 4px;
   margin: 100px 0px 100px 0px;
-
+  
 }
 
 .header {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), 'sans-serif';
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +44,7 @@
 }
 
 .header__title {
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   padding-bottom: 20px;
   line-height: 49px;
 }
@@ -72,26 +72,9 @@
   line-height: 14px;
 }
 
-.theme-menu__button:disabled::before {
-  content: '▶';
-  width: 16px;
-  height: 13px;
-  position: absolute;
-  right: 70px;
-  animation: arrow 0.5s infinite ease-in-out;
-}
-
-@keyframes arrow {
-  0% {
-    right: 70px
-  }
-
-  100% {
-    right: 74px
-  }
-}
-
 .theme-menu__button::after {
+  position: absolute;
+  top: 18px;
   content: '';
   display: block;
   width: 0%;
@@ -101,13 +84,13 @@
   transition: width 300ms, background-color 0.3s;
 }
 
-.theme-menu__button:focus::after {
+.theme-menu__button:focus-visible::after {
   width: 100%;
   background-color: var(--button-hover);
 }
 
-.theme-menu__button:focus {
-  transition: color 0.3;
+.theme-menu__button:focus-visible {
+  transition: color 0.3s;
   color: var(--button-hover)
 }
 
@@ -118,7 +101,6 @@
 
 .theme-menu__button:disabled {
   pointer-events: none;
-  padding: 0
 }
 
 .content-section {
@@ -133,6 +115,7 @@
   line-height: 21.78px;
   font-size: 18px;
   font-variation-settings: 'wght' var(--accent-font-weight);
+  padding: 4px 10px 6px 10px;
 }
 
 .content__card-text {
@@ -146,6 +129,8 @@
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color)
 }
 
 .no-padding {
@@ -194,12 +179,13 @@
 
 .card__icon-button:hover .main-body {
   fill: var(--heart-contour);
-  transition: fill 0.3s 0.05s
+  transition: fill 0.3s 0.05s 1 linear;
+  pointer-events: pointer;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill 0.3s;
+  transition: fill 0.3s 1 linear;
 }
 
 .card__icon-button:active .main-body, 
@@ -215,34 +201,6 @@
 .contour {
   fill: var(--heart-contour);
   transition: fill 0.1s linear;
-}
-
-.like-icon.is-liked .heart {
-  animation: heart 0.3s 0.1s 1 ease-in alternate;
-}
-
-@keyframes heart {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.5);
-  }
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks 0.3s 0.3s ease-in alternate;
-}
-
-@keyframes sparks {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 .like-icon.is-liked .core,
@@ -266,7 +224,7 @@
   height: 100%;
   background-color: var(--accent-color);
   transform: translateX(-100%);
-  transition: transform 0.5 ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .card__like-button:hover::before,
@@ -300,14 +258,12 @@ button:focus-visible {
 }
 
 .card__like-button:focus-visible,
-.card__like-button:focus,
-.card__save:focus-visible,
-.card__save:focus {
+.card__save:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
   transition: box-shadow 0.3s linear;
 }
 
-.footer {
+.save {
   display: grid;
   place-items: center;
   background-color: var(--bg-color);
@@ -342,16 +298,40 @@ button:focus-visible {
   }
 
   .header {
+    padding-top: 136px;
     inline-size: 100%;
   }
 
   .header__title {
-    font-size: 65px;
     line-height: 65px;
   }
 
   .header__sabtitle {
-    font-size: 23px;
     line-height: 23px;
+  }
+
+  .content__card-title {
+    padding: 3px 24px 3px 10px;
+  }
+
+  .content__card-text {
+    padding-top: 27px;
+  }
+
+  .card__save {
+    width: 335px;
+    height: 55px;
+  }
+
+  .card__save .button__text {
+    top: 20px;
+    left: 40px
+
+  }
+
+  .floppy {
+    position: absolute;
+    left: 9px;
+    top: 15px
   }
 }

@@ -37,7 +37,7 @@
         --accent-font: 'PressStart2P', monospace;
         --main-font-weight: 465;
         --accent-font-weight: 785;
-        --bg-color: rgba(0, 0, 0, 1);
+        --bg-color: #000000;
         --accent-color: rgba(0, 204, 20, 1);
         --button-hover: rgba(0, 204, 20, 0.6);
         --background-pattern: url(../svg/pattern-dark.svg);
