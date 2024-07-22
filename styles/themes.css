@@ -4,3 +4,44 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root .theme-light {
+    --main-font: 'Inter', sans-serif;
+    --accent-font: 'PressStart2P', monospace;
+    --main-font-weight: 400;
+    --accent-font-weight: 700;
+    --bg-color: rgba(255, 255, 255, 1);
+    --accent-color: rgba(0, 0, 0, 1);
+    --background-pattern: url(../svg/pattern-light.svg);
+    --button-hover: rgba(0, 0, 0, 0.6);
+    --heart-contour: #000000;
+    --heart-main-color: red;
+}
+
+:root .theme-dark {
+    --main-font: 'Inter', sans-serif;
+    --accent-font: 'PressStart2P', monospace;
+    --main-font-weight: 465;
+    --accent-font-weight: 785;
+    --bg-color: rgba(0, 0, 0, 1);
+    --accent-color: rgba(0, 204, 20, 1);
+    --button-hover: rgba(0, 204, 20, 0.6);
+    --background-pattern: url(../svg/pattern-dark.svg);
+    --heart-contour: #00CC14;
+    --heart-main-color: red;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-font: 'Inter', sans-serif;
+        --accent-font: 'PressStart2P', monospace;
+        --main-font-weight: 465;
+        --accent-font-weight: 785;
+        --bg-color: #000000;
+        --accent-color: rgba(0, 204, 20, 1);
+        --button-hover: rgba(0, 204, 20, 0.6);
+        --background-pattern: url(../svg/pattern-dark.svg);
+        --heart-contour: #00CC14;
+        --heart-main-color: red;
+    }
+}
