@@ -14,7 +14,7 @@
 */
 
 .like-icon.is-liked .heart {
-    animation: fadeIn 0.3s 0.1s 1 ease-in alternate;
+    animation: fadeIn 0.3s 0.1s ease-in 1 alternate;
   }
   
   @keyframes fadeIn {

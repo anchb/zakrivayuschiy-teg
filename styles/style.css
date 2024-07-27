@@ -19,9 +19,9 @@
   min-block-size: 1521px;
   font-family: var(--main-font), 'sans-serif';
   font-variation-settings: 'wght' var(--main-font-weight), 400;
-  background-color: var(--bg-color);
-  color: var(--accent-color);
-  background-image: var(--gradient);
+  background-color: var(--bg-color), white;
+  color: var(--accent-color), black;
+  background-image: var(--gradient), url(../svg/pattern-light.svg);
   background-size: cover;
   background-attachment: fixed;
   margin: 100px 0px 100px 0px;
@@ -146,10 +146,9 @@
      0 -1px var(--text-stroke);
 }
 
-@supports((text-stroke: 1px var(--text-stroke)) or (-webkit-text-stroke: 1px var(--text-stroke))) {
+@supports((-webkit-text-stroke: 1px var(--text-stroke))) {
   .label {
       -webkit-text-stroke: 1px var(--text-stroke);
-      text-stroke: 1px var(--text-stroke);
       text-shadow: none;
   }
 } 
@@ -163,35 +162,35 @@
   display: block;
 }
 
-.zero-sprint {
+.brightness-contrast {
   filter: brightness(200%) contrast(120%)
 }
 
-.begin-first-sprint {
+.saturate {
   filter: saturate(158%);
 }
 
-.end-first-sprint {
+.hue-rotate {
   filter: hue-rotate(233deg);
 }
 
-.begin-second-sprint {
+.sepia {
   filter: sepia(80%)
 }
 
-.end-second-sprint {
+.grayscale {
   filter: grayscale(0.7)
 }
 
-.begin-third-sprint {
+.blur {
   filter: blur(0.12rem);
 }
 
-.end-third-sprint {
+.contrast {
   filter: contrast(130%)
 }
 
-.fourth-sprint {
+.opticaty {
   filter: opacity(0.6)
 }
 
@@ -236,13 +235,13 @@
 
 .card__icon-button:hover .main-body {
   fill: var(--heart-contour);
-  transition: fill 0.3s 0.05s 1 linear;
-  pointer-events: pointer;
+  transition: fill 0.3s 0.05s linear;
+  cursor: pointer;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill 0.3s 1 linear;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .main-body, 
@@ -355,6 +354,8 @@ button:focus-visible {
   position: fixed;
   inset: 0;
   padding: 30px 42px;
+  background-color: var(--bg-color);
+  color: var(--accent-color);
 }
 
 .dialog::backdrop {
