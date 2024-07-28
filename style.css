@@ -230,7 +230,7 @@
 }
 
 .core {
-  transition: fill 0.3s 0.03s 
+  transition: fill 0.3s 0.3s;
 }
 
 .card__icon-button:hover .main-body {
