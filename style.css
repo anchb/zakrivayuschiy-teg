@@ -21,7 +21,7 @@
   font-variation-settings: 'wght' var(--main-font-weight), 400;
   background-color: var(--bg-color), white;
   color: var(--accent-color);
-  background-image: var(--gradient), url(../svg/pattern-light.svg);
+  background-image: var(--gradient);
   background-size: cover;
   background-attachment: fixed;
   margin: 100px 0px 100px 0px;
@@ -224,13 +224,13 @@
   padding-bottom: 31px;
 }
 
+.core {
+  transition: fill 0.3s 0.3s;
+}
+
 .card__icon-button:hover .core {
   fill: var(--heart-contour);
   transition: fill 0.3s linear;
-}
-
-.core {
-  transition: fill 0.3s 0.3s;
 }
 
 .card__icon-button:hover .main-body {
